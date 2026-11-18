@@ -1,0 +1,30 @@
+import React from 'react'
+import "./App.css"
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import SinglePost from './pages/SinglePost';
+import NoPage from './pages/NoPage';
+import SignUp from './pages/SignUp';
+import Login from './pages/Login';
+import CreatePost from './pages/CreatePost';
+const App = () => {
+  return (
+    <>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path='/singlePost/:id' element={<SinglePost />} />
+      <Route path='/signup' element={<SignUp />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/createPost' element={<CreatePost />} />
+      <Route path="*" element={<NoPage />} />
+
+
+    </Routes>
+    </BrowserRouter>
+    
+    </>
+  )
+}
+
+export default App
